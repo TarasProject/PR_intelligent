@@ -1,0 +1,44 @@
+﻿medium 24 piks
+pb pt 20
+
+home mt 50
+
+contact mb 258
+lang mb 24
+#365868
+
+px 24
+py 20-24
+
+///////////////
+\page
+px 25 
+lern none
+footer left
+
+��������� 36�� bold
+���� ������ 200��
+
+24�� bold
+Candidates
+Experts
+Authors
+
+advanteges
+#e05a53   32�� bold
+
+
+button download 
+regular 16pk
+
+
+our team
+#2c5060   36pk   OUR PARTNERS
+24pk
+
+
+footer
+regular
+3 row 18
+14
+10

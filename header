@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <title>{{ config('app.name', 'Intelligent Hero Landing') }}</title>
+
+    <!-- Scripts -->
+{{--    <script src="{{ asset('js/app.js') }}" defer></script>--}}
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" sizes="16x16" href="/images/fav_IH.ico">
+
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="design/bootstrap/css/bootstrap.min.css"/>
+    <!-- Логотип-->
+    <link rel="shortout icon" type="image/x-icon" href="design/img/fav_IH.ico" />
+    <link rel="stylesheet" href="design/fonts/GothamPro/stylesheet.css"/>
+    <link rel="stylesheet" href="design/font-awesome/css/all.css"/>
+    <link rel="stylesheet" type="text/css" href="design/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="design/slick/slick-theme.css"/>
+    <link rel="stylesheet" type="text/css" href="design/css/css.css">
+</head>
+<body>
+        <header id="header" class="header">
+            <div class="container">
+
+                <nav class="navbar navbar-expand-md navbar-light p-0">
+                    <a class="navbar-brand" href="/"><img class="logo img-fluid" alt="logo" src="design/img/logo_IH.svg"></a>
+                    <div class="menu-lang-mobile">
+                        <a class="my-auto">
+                            {{strtoupper(app()->getLocale())}}
+                        </a>
+                    </div>
+
+{{--                    <ul class="menu-lang-mobile">--}}
+{{--                        <li class="nav-item dropdown">--}}
+{{--                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
+{{--                                {{strtoupper(app()->getLocale())}}--}}
+{{--                            </a>--}}
+{{--                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">--}}
+{{--                                @foreach(config('app.languages') as $language)--}}
+{{--                                    @if($language == app()->getLocale())--}}
+{{--                                        @continue;--}}
+{{--                                    @endif--}}
+{{--                                    <a class="dropdown-item"--}}
+{{--                                       href="/{{$language == 'en'?'':$language}}">{{strtoupper($language)}}</a>--}}
+{{--                                @endforeach--}}
+{{--                            </div>--}}
+{{--                        </li>--}}
+{{--                    </ul>--}}
+                            <!-- Collapse button -->
+                    <button class="navbar-toggler toggler-example" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"><span class="dark-blue-text"><i class="navbar-toggler-icon"></i></span></button>
+                    <!-- Collapsible content -->
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent1">
+                        <ul class="navbar-nav ml-auto menu">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="/">@lang('message.Home')</a>
+                            </li>
+                            <li class="nav-item scroll">
+                                <a class="nav-link" href="#team">@lang('message.About Us')</a>
+                            </li>
+                            <li class="nav-item scroll">
+                                <a class="nav-link" href="#ecosystems">@lang('message.Solutions')</a>
+                            </li>
+                            <li class="nav-item scroll">
+                                <a class="nav-link" href="#footer">@lang('message.Contact')</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    {{strtoupper(app()->getLocale())}}
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    @foreach(config('app.languages') as $language)
+                                        @if($language == app()->getLocale())
+                                            @continue;
+                                        @endif
+                                        <a class="dropdown-item"
+                                           href="/{{$language == 'en'?'':$language}}">{{strtoupper($language)}}</a>
+                                    @endforeach
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="menu-lang">
+                    @foreach(config('app.languages') as $language)
+                        @if($language == app()->getLocale())
+                            @continue;
+                        @endif
+                        <a class="dropdown-item"
+                           href="/{{$language == 'en'?'':$language}}">{{strtoupper($language)}}</a>
+                    @endforeach
+                </div>
+            </div>
+            <div class="bg bg-header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-12">
+                            <h1>
+                                @lang('message.Academic Credentials Verification on Blockchain')
+                            </h1>
+                            <button type="button" class="btn style-button">@lang('message.Start to verify')
+                            </button>
+                        </div>
+                        <div class="col-lg-6 col-12">
+                            <img class="img-fluid" src="design/img/img-header.png" alt="img-header">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+{{--        <main class="py-4">--}}
+{{--            @yield('content')--}}
+{{--        </main>--}}
+     @include('solutions')
+     @include('advantages')
+     @include('about')
+     @include('partners')
+     @include('documents')
+     @include('footer')
+     <a href="#" id="go-top" title="@lang('message.Up')" style="display: none">@lang('message.Up')</a>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="design/js/jquery.min.js" crossorigin="anonymous"></script>
+    <script src="design/js/popper.min.js"  crossorigin="anonymous"></script>
+    <script type="text/javascript" src="design/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="design/slick/slick.min.js"></script>
+
+    <!--My js-->
+    <script type="text/javascript" src="design/js/js.js"></script>
+</body>
+</html>
+
